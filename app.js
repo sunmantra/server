@@ -1,12 +1,12 @@
 const http = require('http');
 const url = require('url');
-
-http.createServer((request, response)=>{
+const PORT=3000;
+http.createServer((req, res)=>{
     console.log('start Server');
-    console.log(request.method);//определение метода запроса get or post
-    let urlRequest = url.parse(request.url, true);
+    console.log(req.method);//определение метода запроса get or post
+    let urlRequest = url.parse(req.url, true);
     console.log(urlRequest);
     
-    
-    response.end('start');
-}).listen(3000);
+    res.write('staaaart');
+    res.end();
+}).listen(PORT);
